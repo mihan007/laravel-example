@@ -1,0 +1,92 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2.1
+
+orbs:
+  slack: circleci/slack@3.4.2
+
+jobs:
+  test:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.4
+
+      - image: circleci/mysql:5.7-ram
+        command: mysqld --default-authentication-plugin=mysql_native_password
+        environment:
+          MYSQL_USER: forge
+          MYSQL_DATABASE: troiza_test
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_PASSWORD: 'forge'
+
+    steps:
+      - checkout
+      - run:
+          name: "Prepare Environment"
+          command: |
+            sudo -E apt-get update
+            sudo -E apt-get install -y libpng-dev libjpeg-dev
+            echo 'memory_limit = -1' | sudo tee -a /usr/local/etc/php/conf.d/docker-php-memlimit.ini
+      - run:
+          name: Install MySQL driver
+          command: |
+            sudo docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
+            sudo docker-php-ext-install zip bcmath pdo_mysql gd
+      - run:
+          name: "Create Environment file"
+          command: |
+            mv .env.testing .env
+
+      # Download and cache dependencies
+      # composer cache
+      - restore_cache:
+          keys:
+          # "composer.json" can be used if "composer.json"
+          # is not committed to the repository.
+          - composer-v1-{{ checksum "composer.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - composer-v1-
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+
+      # Waiting for MySQL to be ready
+      - run:
+          name: "Waiting for MySQL to be ready"
+          command: |
+            for i in `seq 1 30`;
+            do
+              nc -z 127.0.0.1 3306 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for MySQL && exit 1
+
+      # Install mysql cli
+      - run:
+          name: "Install MySQL CLI"
+          command: |
+            sudo apt-get install default-mysql-client
+
+      # prepare the database
+      - run: php artisan migrate --env=testing --database=mysql --force
+
+      # run tests with phpunit or codecept
+      - run: ./vendor/bin/phpunit --log-junit tests/_output/junit.xml
+      - store_test_results:
+          path: tests/_output
+      - store_artifacts:
+          path: tests/_output
+
+      - slack/status:
+          fail_only: false
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - test

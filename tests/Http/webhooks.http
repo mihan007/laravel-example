@@ -1,0 +1,252 @@
+### https://mrqz.me
+# webook
+POST {{host}}/api/v1/web-leads/webhook/ICtNahLQfAaSp1bnkKM3
+Content-Type: application/json
+
+{
+  "raw": [
+    {
+      "q": "Isnnf61lCg",
+      "a": "vD2Ey3pMnU"
+    },
+    {
+      "q": "Bakwf5P88W",
+      "a": [
+        "TAv400sOt0",
+        "AijEQV4878",
+        "c54j1d8XCV",
+        "V1o8DgTTbn"
+      ]
+    },
+    {
+      "q": "tvWEeALoOB",
+      "a": "5Sw7L11l3p"
+    },
+    {
+      "q": "8822CBuH2p",
+      "a": [
+        "OQY01Je1Mb",
+        "3hr0CdF4S8"
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "q": "Какое помещение нужно остеклить?",
+      "a": "Квартира в доме",
+      "t": "images"
+    },
+    {
+      "q": "Какие комнаты нужно остеклить?",
+      "a": [
+        "Гостиная/Зал",
+        "Балкон/Лоджия",
+        "Кухня",
+        "Спальня"
+      ],
+      "t": "variants"
+    },
+    {
+      "q": "Какое окно предпочитаете?",
+      "a": "Цветное окно/Ламинация",
+      "t": "images"
+    },
+    {
+      "q": "Выберите подходящие варианты.",
+      "a": [
+        "Есть дети до 5 лет",
+        "Есть окно которое выходит на дорогу"
+      ],
+      "t": "images"
+    }
+  ],
+  "contacts": {
+    "name": "",
+    "email": "",
+    "phone": "+795831218777"
+  },
+  "quiz": {
+    "id": "5d98ac1132f96800443375b3",
+    "name": "Пластиковые окна - Саратов/Энгельс"
+  },
+  "extra": {
+    "href": "https://ya.ru"
+  }
+}
+
+### https://roistat.com
+# webook
+POST {{host}}/api/v1/web-leads/webhook/{{webhookKey}}
+Content-Type: application/json
+
+{
+  "id": "2726",
+  "ip": "188.244.222.165",
+  "city": "Саратов",
+  "date": "2020-02-02 09:02:03",
+  "link": "https://cloud.roistat.com/projects/90460/calltracking/call/2726/file/0d5990065174d3f5a56caa7ed767a2d7",
+  "callee": "7800224633",
+  "caller": "7800224635",
+  "domain": "саратов.пластиковые-окна-цена.рф",
+  "marker": "direct72_search_7430030700_пластиков окна",
+  "source": "call-web-hook",
+  "status": "ANSWER",
+  "country": "Россия",
+  "file_id": null,
+  "duration": 94,
+  "order_id": null,
+  "referrer": "https://yabs.yandex.ru?from=yandex.ru;search&#x2f;touch&#x2f;;web;;23000000;&q=пластиковые+окна&etext=2202.oymoge2czu-hlpdeumewkwsiev-mdxrkg6oymofq8p6whylqdqum6fpxuxeq6r-zdg1oz2p5am5hd210cmx4yw.9ffae07fbe4671506fa25fa91dbd1bf589ecd519",
+  "utm_term": "пластиков окна",
+  "visit_id": "176368",
+  "utm_medium": "cpc",
+  "utm_source": "yandex",
+  "first_visit": "176368",
+  "utm_content": "mob",
+  "landing_page": "https://саратов.пластиковые-окна-цена.рф/",
+  "utm_campaign": "cid|42882828|search",
+  "custom_fields": [],
+  "source_level_1": "direct72",
+  "source_level_2": "search",
+  "source_level_3": "7430030700",
+  "source_level_4": "пластиков окна",
+  "roistat_param_1": null,
+  "roistat_param_2": null,
+  "roistat_param_3": null,
+  "roistat_param_4": null,
+  "roistat_param_5": null,
+  "google_client_id": "1002445936.1580634104",
+  "metrika_client_id": "1580634103218143218"
+}
+
+### https://zadarma.com
+# webook 1 of 2
+POST {{host}}/api/v1/web-leads/webhook/{{webhookKey}}
+Content-Type: application/json
+
+{
+  "event": "NOTIFY_START",
+  "source": "zadarma-web-hook",
+  "caller_id": "+79313601777",
+  "call_start": "2020-02-01 11:40:59",
+  "called_did": "79587628385",
+  "pbx_call_id": "in_c4444ce1c12eb116b"
+}
+
+### https://zadarma.com
+# webook 2 of 2
+POST {{host}}/api/v1/web-leads/webhook/{{webhookKey}}
+Content-Type: application/json
+
+{
+  "event": "NOTIFY_END",
+  "source": "zadarma-web-hook",
+  "caller_id": "+79313601777",
+  "call_start": "2020-02-01 11:40:59",
+  "called_did": "79587628385",
+  "pbx_call_id": "in_c4444ce1c12eb116b",
+  "call_id_with_rec": "1123123",
+  "is_recorded": 1
+}
+
+### 1 https://gudok.tel
+POST {{host}}/api/v1/web-leads/webhook/{{webhookKey}}
+Content-Type: application/json
+
+{
+  "id": 721,
+  "project_id": 11,
+  "project_title": "Мой первый проект",
+  "dst": "73365841970",
+  "adv_channel_id": "50",
+  "adv_channel_name": "Название моего номера",
+  "src": "74956455366",
+  "duration": 23,
+  "billsec": 13,
+  "callstatus": "ANSWERED",
+  "date": "2020-08-13 08:29:03 UTC",
+  "region": "Москва",
+  "call_number": 1,
+  "audio": "https://api.zadarma.com/v1/pbx/record/download/dcfd4d9593b86b46fad5868c0105e667465f812443fbb0f7f1d5efafb85ad5d0/b469a82a25f8f434feaa5c0e9421b12911c89e5a6d66a194292bb810ec3e0747/244834-1598346610.55927-79183926525-2020-08-25-121010.mp3"
+}
+
+### 2 https://gudok.tel
+POST http://troiza.lcl/api/v1/web-leads/webhook/ICtNahLQfAaSp1bnkKM3
+Content-Type: application/json
+
+{
+  "id": "0",
+  "project_id": "0",
+  "adv_channel_id": "0",
+  "adv_channel_name": "0",
+  "duration": "60",
+  "billsec": "30",
+  "callstatus": "ANSWERED",
+  "src": "79999999999",
+  "dst": "79999999999",
+  "date": "2020-09-02 05:30:10 UTC",
+  "region": null,
+  "call_number": "1",
+  "project_title": "Test",
+  "audio": "https://in.gudok.tel/api/audio/test"
+}
+
+### https://paradox.myjetbrains.com/youtrack/issue/LDG-221
+POST {{host}}/api/v1/web-leads/webhook/qEjP9Ge5iqCYHVkKSmzr
+Content-Type: application/json
+
+{
+  "pbx_call_id": "in_43ab69fdb7ad8563a3ad208100dd01b04e232d99",
+  "call_id_with_rec": "1590639472.16701",
+  "event": "NOTIFY_RECORD"
+}
+
+###
+GET {{host}}/api/v1/web-leads/webhook/{{webhookKey}}?phone=+77987654441&extra=yandex.ru
+
+###
+GET {{host}}/api/v1/web-leads/webhook/{{webhookKey}}?phone=+781741126117&extra=yandex.ru
+
+###
+### https://roistat.com
+# webook https://paradox.myjetbrains.com/youtrack/issue/LDG-235
+POST https://panel.troiza.net/api/v1/web-leads/webhook/9TETL1CFetYWngHGshSR
+Content-Type: application/json
+
+{
+  "id": "15777",
+  "date": "2020-06-02 06:31:17",
+  "callee": "79993335872",
+  "caller": "79619378029",
+  "marker": "интернет",
+  "order_id": "35989",
+  "visit_id": null,
+  "custom_fields": {
+    "project_id": 616
+  },
+  "google_client_id": "111111111.1111111111"
+}
+
+### https://paradox.myjetbrains.com/youtrack/issue/LDG-338
+GET {{host}}/api/v1/companies/proxy-leads/store?api_key={{webhookKey}}&p=123
+
+### Storage using old way
+GET {{host}}/api/v1/companies/proxy-leads/store?advertising_platform=http://xn--80aab6birx.xn-----6kcbbivdvudf7adgdi2bt5gve.xn--p1ai/&api_key=ICtNahLQfAaSp1bnkKM3&comment=Cумма скидки для клиента 1000 руб.&phone=79236443029&title=Быстрая заявка | Пластиковые окна | Фабрика | Барнаул
+
+###
+GET {{host}}/api/v1/companies/proxy-leads/store?advertising_platform=http://xn--80aab6birx.xn-----6kcbbivdvudf7adgdi2bt5gve.xn--p1ai/&api_key=someinvalidkey&comment=Cумма скидки для клиента 1000 руб.&phone=79236443029&title=Быстрая заявка | Пластиковые окна | Фабрика | Барнаул
+
+### https://paradox.myjetbrains.com/youtrack/issue/LDG-396
+POST {{host}}/api/v1/web-leads/webhook/O46brrSiTCEd8R6kfEYD
+Content-Type: application/json
+
+{
+  "Name": "Дмитрий",
+  "Phone": "+7 (927) 375-96-31",
+  "formid": "form221440542",
+  "tranid": "2869204:1242034242",
+  "utm_term": "Автоматические ворота цена",
+  "utm_medium": "day",
+  "utm_source": "yandex_poisk",
+  "utm_content": "9587042367",
+  "utm_campaign": "gor"
+}
